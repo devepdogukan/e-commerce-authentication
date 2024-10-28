@@ -1,0 +1,12 @@
+pnpm test
+if [ $? -ne 0 ]; then
+  echo "Tests failed. Commit operation aborted."
+  exit 1
+fi
+
+pnpm run lint
+if [ $? -ne 0 ]; then
+  echo "Eslint failed. Commit operation aborted."
+  exit 1
+fi
+pnpm format
