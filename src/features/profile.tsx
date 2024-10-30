@@ -4,9 +4,11 @@ import withActions, { IWithActions } from '~/utils/with-actions'
 const Profile = ({ actions, dispatch }: IWithActions) => {
   const state = useAppSelector((state) => state.auth)
 
+  if (!state.user) return null
+
   return (
     <div>
-      Welcome {state.user?.email}
+      Welcome {state.user.email}
       <p className="text-center text-sm mt-4 text-gray-600">
         <button
           onClick={() => dispatch!(actions!.auth.logout())}

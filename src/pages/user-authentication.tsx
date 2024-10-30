@@ -20,9 +20,8 @@ const UserAuthentication = () => {
   const CurrentSide = sides[side]
 
   useEffect(() => {
-    if (state.user?.email) setSide('profile')
-    else setSide('login')
-  }, [state.user?.email])
+    setSide(state?.user ? 'profile' : 'login')
+  }, [state?.user?.email])
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

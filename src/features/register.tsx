@@ -48,7 +48,7 @@ const Register = ({
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     const request = (await dispatch!(
-      actions?.auth.registerUser(data),
+      actions!.auth.registerUser(data),
     )) as unknown
 
     if (
@@ -93,9 +93,10 @@ const Register = ({
 
           <button
             type="submit"
+            disabled={state.loading}
             className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
-            Login
+            Register
           </button>
         </div>
       </Form>

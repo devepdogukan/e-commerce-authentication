@@ -42,7 +42,7 @@ const Login = ({
   })
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
-    const request = (await dispatch!(actions?.auth.loginUser(data))) as unknown
+    const request = (await dispatch!(actions!.auth.loginUser(data))) as unknown
 
     if (
       request &&
@@ -78,6 +78,7 @@ const Login = ({
           />
 
           <button
+            disabled={state.loading}
             type="submit"
             className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >

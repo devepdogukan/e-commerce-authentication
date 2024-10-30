@@ -19,7 +19,10 @@ dependencies:
     version: 7.53.1(react@18.3.1)
   react-redux:
     specifier: ^9.1.2
-    version: 9.1.2(@types/react@18.3.12)(react@18.3.1)
+    version: 9.1.2(@types/react@18.3.12)(react@18.3.1)(redux@5.0.1)
+  redux-thunk:
+    specifier: ^3.1.0
+    version: 3.1.0(redux@5.0.1)
   yup:
     specifier: ^1.4.0
     version: 1.4.0
@@ -55,6 +58,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18.3.1
     version: 18.3.1
+  '@types/redux-mock-store':
+    specifier: ^1.0.6
+    version: 1.0.6
   '@typescript-eslint/eslint-plugin':
     specifier: ^8.11.0
     version: 8.12.0(@typescript-eslint/parser@8.12.0)(eslint@9.13.0)(typescript@5.6.3)
@@ -109,6 +115,9 @@ devDependencies:
   prettier:
     specifier: ^3.3.3
     version: 3.3.3
+  redux-mock-store:
+    specifier: ^1.5.5
+    version: 1.5.5(redux@5.0.1)
   style-loader:
     specifier: ^4.0.0
     version: 4.0.0(webpack@5.95.0)
@@ -2172,6 +2181,12 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.13
       csstype: 3.1.3
+
+  /@types/redux-mock-store@1.0.6:
+    resolution: {integrity: sha512-eg5RDfhJTXuoJjOMyXiJbaDb1B8tfTaJixscmu+jOusj6adGC0Krntz09Tf4gJgXeCqCrM5bBMd+B7ez0izcAQ==}
+    dependencies:
+      redux: 4.2.1
+    dev: true
 
   /@types/retry@0.12.2:
     resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
@@ -5724,6 +5739,10 @@ packages:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
 
+  /lodash.isplainobject@4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    dev: true
+
   /lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
     dev: true
@@ -6549,7 +6568,7 @@ packages:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
     dev: true
 
-  /react-redux@9.1.2(@types/react@18.3.12)(react@18.3.1):
+  /react-redux@9.1.2(@types/react@18.3.12)(react@18.3.1)(redux@5.0.1):
     resolution: {integrity: sha512-0OA4dhM1W48l3uzmv6B7TXPCGmokUU4p1M44DGN2/D9a1FjVPukVjER1PcPX97jIg6aUeLq1XJo1IpfbgULn0w==}
     peerDependencies:
       '@types/react': ^18.2.25
@@ -6564,6 +6583,7 @@ packages:
       '@types/react': 18.3.12
       '@types/use-sync-external-store': 0.0.3
       react: 18.3.1
+      redux: 5.0.1
       use-sync-external-store: 1.2.2(react@18.3.1)
     dev: false
 
@@ -6621,6 +6641,32 @@ packages:
       indent-string: 4.0.0
       strip-indent: 3.0.0
     dev: true
+
+  /redux-mock-store@1.5.5(redux@5.0.1):
+    resolution: {integrity: sha512-YxX+ofKUTQkZE4HbhYG4kKGr7oCTJfB0GLy7bSeqx86GLpGirrbUWstMnqXkqHNaQpcnbMGbof2dYs5KsPE6Zg==}
+    peerDependencies:
+      redux: '*'
+    dependencies:
+      lodash.isplainobject: 4.0.6
+      redux: 5.0.1
+    dev: true
+
+  /redux-thunk@3.1.0(redux@5.0.1):
+    resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
+    peerDependencies:
+      redux: ^5.0.0
+    dependencies:
+      redux: 5.0.1
+    dev: false
+
+  /redux@4.2.1:
+    resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
+    dependencies:
+      '@babel/runtime': 7.26.0
+    dev: true
+
+  /redux@5.0.1:
+    resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
 
   /reflect.getprototypeof@1.0.6:
     resolution: {integrity: sha512-fmfw4XgoDke3kdI6h4xcUz1dG8uaiv5q9gcEwLS4Pnth2kxT+GZ7YehS1JTMGBQmtV7Y4GFGbs2re2NqhdozUg==}

@@ -19,6 +19,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.1",
     "react-redux": "^9.1.2",
+    "redux-thunk": "^3.1.0",
     "yup": "^1.4.0"
   },
   "scripts": {
@@ -26,7 +27,7 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src",
     "format": "prettier --write src",
-    "test": "jest",
+    "test": "jest --coverage",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -40,6 +41,7 @@
     "@types/node": "^22.8.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@types/redux-mock-store": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
     "autoprefixer": "^10.4.20",
@@ -58,6 +60,7 @@
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
     "prettier": "^3.3.3",
+    "redux-mock-store": "^1.5.5",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.14",
     "terser-webpack-plugin": "^5.3.10",

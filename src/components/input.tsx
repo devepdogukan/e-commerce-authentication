@@ -10,13 +10,11 @@ type DefaultProps = Exclude<
 >
 
 type InputProps = {
-  label?: string
   error?: string
   control: unknown
 } & DefaultProps
 
 const Input: React.FC<InputProps> = ({
-  label,
   error,
   name,
   control,
@@ -26,11 +24,6 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div>
-      {label && (
-        <label className="block text-sm font-medium text-gray-700">
-          {label}
-        </label>
-      )}
       <Controller
         name={name as string}
         control={control as Control}
